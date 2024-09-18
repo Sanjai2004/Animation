@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c3e50;
+    
+}
+.container{
+    display: flex;
+    gap: 30px;
+    perspective: 1000px;
+}
+.child{
+    height: 260px;
+    width: 155px ;
+    border-radius: 10px;
+    /*  background-color: black; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0);
+    transition: all 0.5s linear;
+}
+
+
+.child1{
+    background-image: url("https://img.freepik.com/free-vector/monkey-rides-motorcycle-cartoon-character_1308-75151.jpg?size=626&ext=jpg");
+}
+.child2{
+    background-image: url("https://img.freepik.com/free-photo/fun-3d-cartoon-teenage-boy_183364-80095.jpg?size=626&ext=jpg");
+}
+.child3{
+    background-image: url("https://img.freepik.com/free-vector/cute-happy-smiling-child-isolated-white_1308-32243.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+.child4{
+    background-image: url("https://img.freepik.com/premium-vector/cartoon-man-with-beard-mustache_481747-98950.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+.child5{
+    background-image: url("https://img.freepik.com/premium-vector/cartoon-drawing-elephant-with-blue-eyes-black-nose_1016520-64509.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+.child6{
+    background-image: url("https://img.freepik.com/premium-vector/adorable-elephant-with-laptop-glasses-vector-graphic_1080480-84586.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+.child7{
+    background-image: url("https://img.freepik.com/free-vector/cheerful-cartoon-tiger-cub-sitting_1308-162293.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+.child8{
+    background-image: url("https://img.freepik.com/free-vector/cheerful-young-girl-sitting-illustration_1308-163518.jpg?size=626&ext=jpg&ga=GA1.1.869497398.1726629687&semt=ais_hybrid");
+}
+
+.child:hover{
+    filter: brightness(1);
+    scale: 1.27;
+}
+.child:has(+.child:hover){
+   filter: brightness(0.3);
+   scale: 1.1;
+   transform: rotatey(-20deg);
+}
+.child:has(+*+:hover){
+    filter: brightness(0.17);
+    scale: 1.02;
+    transform: rotatey(-10deg);
+ }
+ .child:hover+*{
+    filter: brightness(0.3);
+    scale: 1.1;
+    transform: rotatey(20deg);
+ }
+ .child:hover+*+*{
+    filter: brightness(0.17);
+    scale: 1.02;
+    transform: rotatey(10deg);
+ }
